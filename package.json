@@ -1,0 +1,55 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "a youtube channel project",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon --exec babel-node ./src/index.js",
+    "start:app": "NODE_ENV=production npm run db-migrate && NODE_ENV=production babel-node ./src/index.js",
+    "dev-start": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/index.js",
+    "test:run-server": "cross-env NODE_ENV=testing nodemon --exec babel-node ./src/index.js",
+    "test:execute-test": "NODE_ENV=testing npm run migrate && mocha --require @babel/register 'src/**/*.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mujohn26/yotube-api.git"
+  },
+  "author": "john",
+  "license": "MIT",
+  "bugs": {
+    "url": "git+https://github.com/mujohn26/yotube-api/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.7.6",
+    "aws-sdk": "^2.735.0",
+    "axios": "^0.19.2",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "googleapis": "^61.0.0",
+    "nodemon": "^2.0.1",
+    "nyc": "^15.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.2"
+  },
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4"
+  }
+}
